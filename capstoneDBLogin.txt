@@ -1,0 +1,6 @@
+DB Instance Identifier: capstoneDB
+Master Username: admin
+Master Password: Middle School
+Host: captstonedb.crm7ceedgen4.us-east-2.rds.amazonaws.com
+
+const port = process.env.PORT || 3006
