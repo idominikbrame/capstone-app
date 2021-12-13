@@ -1,11 +1,15 @@
 const express = require('express')
+const cors = require('cors')
 const app = express();
-const env = require('dotenv').config()
 
 const pool = require('./sql/connections')
 
 
-const port = process.env.PORT || 3006
+const port = process.env.PORT || 4000
+
+app.use(cors({
+    origin: 'http://localhost:3000'
+}))
 
 app.get('/', (req, res) => {
     console.log("We are in the home route")
@@ -13,6 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/aws', (req, res) => {
+
     console.log('Our Get AWS Route')
     pool.query(
         'SELECT * FROM users', (error, results) => {
