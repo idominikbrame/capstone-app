@@ -5,12 +5,12 @@ import Login from "./Components/Login/Login";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <Login />
-        <Dashboard />
-      </BrowserRouter>
+      <>
+          <Login />
+          <Dashboard />
+      </>
 
-  )
+    )
 }
 
 export default App;
