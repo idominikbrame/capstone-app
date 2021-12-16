@@ -4,8 +4,6 @@ import {Authentication} from "./Authenticate";
 const Login = (props) => {
 
     //Fetch Users from Express Back End
-    //data = results from fetch response
-
     const [users, setUsers] = useState(null);
 
     const fetchUser = async () => {
@@ -27,8 +25,26 @@ const Login = (props) => {
         fetchUser()
     }, []);
 
+
+    //CheckLoginCredentials
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+
+    const handleEmailChange = (e) => {
+        let input = e.target.value.trim()
+        setEmail(input)
+    }
+
+    const handlePasswordChange = (e) => {
+        let input = e.target.value.trim()
+        setPassword(input)
+    }
+
     const checkForUser = (users) => {
-        Authentication(users)
+        let thePass = password.trim()
+        let theEmail = email.trim()
+
+        console.log(typeof thePass,typeof theEmail)
     }
 
 
@@ -42,9 +58,9 @@ const Login = (props) => {
                 <h1>Login Page</h1>
                 <form>
                     <label>Email</label>
-                    <input placeholder={"example@email.com"}/>
+                    <input placeholder={"example@email.com"} onBlur={handleEmailChange}/>
                     <label>Password</label>
-                    <input placeholder={"password"}/>
+                    <input placeholder={"password"} onBlur={handlePasswordChange}/>
                     <input type={"button"} onClick={checkForUser} value={"Login"}/>
                 </form>
             </div>
