@@ -31,20 +31,17 @@ const Login = (props) => {
     const [email, setEmail] = useState('');
 
     const handleEmailChange = (e) => {
-        let input = e.target.value.trim()
+        let input = e.target.value.trim().replace(/\s/g, "")
         setEmail(input)
     }
 
     const handlePasswordChange = (e) => {
-        let input = e.target.value.trim()
+        let input = e.target.value.trim().replace(/\s/g, "")
         setPassword(input)
     }
 
-    const checkForUser = (users) => {
-        let thePass = password.trim()
-        let theEmail = email.trim()
-
-        console.log(typeof thePass,typeof theEmail)
+    const checkForUser = () => {
+        Authentication(email, password, users)
     }
 
 
@@ -60,7 +57,7 @@ const Login = (props) => {
                     <label>Email</label>
                     <input placeholder={"example@email.com"} onBlur={handleEmailChange}/>
                     <label>Password</label>
-                    <input placeholder={"password"} onBlur={handlePasswordChange}/>
+                    <input placeholder={"password"} onBlur={handlePasswordChange} onKeyUp={checkForUser}/>
                     <input type={"button"} onClick={checkForUser} value={"Login"}/>
                 </form>
             </div>
