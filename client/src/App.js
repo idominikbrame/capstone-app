@@ -5,10 +5,9 @@ import Login from "./Components/Login/Login";
 
 const App = () => {
   return (
-      <>
+      <div className={"App"}>
           <Login />
-          <Dashboard />
-      </>
+      </div>
 
     )
 }
