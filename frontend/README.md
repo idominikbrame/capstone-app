@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+#QUESTIONS:
+
+Why is log happening after leaving input field?
+How does login page set up look? Will it scale? (Not important just curious)
+Leave a more detailed description when committing/pushing to GIT?
