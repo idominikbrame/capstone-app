@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import './Login.css'
+import './Register.css'
 import {Navigate} from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
 
     //Fetch Users from Express Back End
     const [loggedIn, setLoggedIn] = useState(false)
@@ -43,13 +43,13 @@ const Login = () => {
     if (!loggedIn) {
         return (
             <div className={'form-container'}>
-                <h1>Login Page</h1>
+                <h1>Register Page</h1>
                 <form>
                     <label>Email: </label>
                     <input placeholder={"example@email.com"} onChange={(e) => setEmail(e.target.value)}/>
                     <label>Password: </label>
                     <input placeholder={"password"} onChange={(e) => setPassword(e.target.value)}/>
-                    <input type={"button"} onClick={fetchUser} value={"Login"}/>
+                    <input type={"button"} onClick={fetchUser} value={"Register"}/>
                 </form>
             </div>
         );
@@ -59,4 +59,4 @@ const Login = () => {
 
 };
 
-export default Login;
+export default Register;

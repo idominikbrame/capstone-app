@@ -1,12 +1,17 @@
 import './App.css';
 import {Navbar} from './Components/NavBar/Navbar';
-import Routers from "./Router";
-
+import Router from './Router'
 const App = () => {
   return (
       <div className={"App"}>
+
+
+          {/*DOM Tree*/}
           <Navbar />
-          <Routers />
+          {/*Requests */}
+          <Router />
+
+
       </div>
 
     )

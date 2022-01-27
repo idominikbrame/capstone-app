@@ -1,26 +1,42 @@
 import React from "react";
-import {AiFillHome} from "react-icons/ai";
-import {IoLibrarySharp} from "react-icons/io5"
-import {FaSearch} from "react-icons/fa"
-import {MdContactSupport} from "react-icons/md"
+import {IoMdTrendingUp} from "react-icons/io";
+import {HiChip} from "react-icons/hi"
+import {BiWorld} from "react-icons/bi"
+import {MdContactSupport, MdSportsSoccer} from "react-icons/md"
+import {RiVirusFill} from 'react-icons/ri'
+
 
 export const SidebarData = [
+
     {
-        title: 'dashboard',
-        path: '/dashboard',
-        icon: <AiFillHome />,
+        title: 'Top Headlines',
+        path: '/top-headlines',
+        icon: <IoMdTrendingUp />,
         class: 'nav-text'
     },
     {
-        title: 'Library',
-        path: '/library',
-        icon: <IoLibrarySharp />,
+        title: 'Covid-19',
+        path: '/covid19',
+        icon: <RiVirusFill />,
+        class: 'nav-text',
+        id: 'covid'
+    },
+    {
+        title: 'Tech News',
+        path: '/tech-news',
+        icon: <HiChip />,
         class: 'nav-text'
     },
     {
-        title: 'Search',
-        path: '/search',
-        icon: <FaSearch />,
+        title: 'International',
+        path: '/international',
+        icon: <BiWorld />,
+        class: 'nav-text'
+    },
+    {
+        title: 'Sports',
+        path: '/sports',
+        icon: <MdSportsSoccer />,
         class: 'nav-text'
     },
     {
