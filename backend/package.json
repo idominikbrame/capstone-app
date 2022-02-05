@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "client": "npm start --prefix ../client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd ../client && npm install && npm run build"
   },
@@ -30,4 +29,3 @@
     "react-router-dom": "^6.0.2"
   }
 }
-ß

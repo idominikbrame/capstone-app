@@ -11,7 +11,10 @@ app.use(bodyParser.json())
 const port = process.env.PORT || 4000
 
 app.use(cors())
+
 app.use(express.static(path.resolve(__dirname, '../client/build')));
+
+
 app.get('/', (req, res) => {
     console.log("We are in the home route")
     res.send(`You are connected to express ${process.env.HOST}`)
