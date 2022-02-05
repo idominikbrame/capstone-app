@@ -17,7 +17,7 @@ const Register = () => {
     const registerUser = () => {
         axios({
             method: 'post',
-            url: 'http://localhost:4000/register',
+            url: 'https://render-news.herokuapp.com/register',
             data: ({
                 email: email,
                 password: password,

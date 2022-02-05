@@ -10,7 +10,7 @@ const Login = () => {
     const fetchUser = () => {
         axios({
             method: 'post',
-            url: 'http://localhost:4000/aws',
+            url: 'https://render-news.herokuapp.com/aws',
             data: ({
                 email: email,
                 password: password
