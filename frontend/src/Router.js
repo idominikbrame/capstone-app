@@ -9,6 +9,7 @@ import International from "./Components/International/International";
 import Sports from "./Components/Sports/Sports";
 import Covid19 from "./Components/Covid-19/Covid19";
 import Register from "./Components/Register/Register";
+import TalkNews from "./Components/TalkNews/TalkNews"
 
 
 function RequireAuth({ children, redirectTo }) {
@@ -59,6 +60,12 @@ const Router = () => {
                                <Covid19 />
                            </RequireAuth>
                        } />
+                {/*<Route exact path="/talknews"*/}
+                {/*       element={*/}
+                {/*           <RequireAuth redirectTo="/login">*/}
+                {/*               <TalkNews />*/}
+                {/*           </RequireAuth>*/}
+                {/*       } />*/}
             </Routes>
         </div>
     );

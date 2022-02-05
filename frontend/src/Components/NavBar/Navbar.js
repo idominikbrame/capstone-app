@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useState} from "react";
 import fifty from '../../images/50-Cent-1024x683.jpg'
 import { Link } from 'react-router-dom';
@@ -12,14 +12,23 @@ import {ImSearch} from 'react-icons/im'
 
 export const Navbar = () => {
     const [sidebar, setSidebar] = useState(true)
+    const [searchTerm, setSearchTerm] = useState('')
 
     const showSidebar = () => {
         return setSidebar(!sidebar)
     }
 
     const searchInput = () => {
-        console.log('searching...')
+        if(searchTerm !== '') {
+            console.log('we outchea')
+        }
     }
+
+    useEffect(() => {
+        console.log(
+           searchTerm
+        )
+    })
     return (
         <>
             {/*Logo/ShowSide Menu */}
@@ -32,7 +41,7 @@ export const Navbar = () => {
                 </Link>
                 <form>
                     <button type={"button"} onClick={searchInput}><ImSearch /></button>
-                    <input placeholder={'Search By Keyword'}/>
+                    <input onChange={(e) => setSearchTerm(e.target.value)} placeholder={'Search By Keyword'}/>
 
                 </form>
                 <div className={'navbar-right'}>

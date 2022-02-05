@@ -35,7 +35,6 @@ const TopHeadlines = () => {
                     const hour = minute * 60;
                     let convertedPublishDate = moment(article.publishedAt)._d
                     let hoursPassedSincePublish = Math.floor((d - convertedPublishDate) / hour)
-                    console.log(hoursPassedSincePublish)
                    return (
                        <div key={index} className={'article-container'}>
                            <div className={'article-flex'}>

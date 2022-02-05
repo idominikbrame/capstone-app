@@ -4,6 +4,7 @@ import {HiChip} from "react-icons/hi"
 import {BiWorld} from "react-icons/bi"
 import {MdContactSupport, MdSportsSoccer} from "react-icons/md"
 import {RiVirusFill} from 'react-icons/ri'
+import {FaMicrophoneAlt} from 'react-icons/fa'
 
 
 export const SidebarData = [
@@ -39,10 +40,16 @@ export const SidebarData = [
         icon: <MdSportsSoccer />,
         class: 'nav-text'
     },
-    {
-        title: 'Support',
-        path: '/support',
-        icon: <MdContactSupport />,
-        class: 'nav-text'
-    }
+    // {
+    //     title: 'Talk News',
+    //     path: '/talknews',
+    //     icon: <FaMicrophoneAlt />,
+    //     class: 'nav-text'
+    // },
+    // {
+    //     title: 'Support',
+    //     path: '/support',
+    //     icon: <MdContactSupport />,
+    //     class: 'nav-text'
+    // }
 ]

@@ -7,20 +7,26 @@ const Register = () => {
 
     //Fetch Users from Express Back End
     const [loggedIn, setLoggedIn] = useState(false)
-    const fetchUser = () => {
+
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('')
+
+    const registerUser = () => {
         axios({
             method: 'post',
-            url: 'http://localhost:4000/aws',
+            url: 'http://localhost:4000/register',
             data: ({
                 email: email,
-                password: password
+                password: password,
+                first_name: firstName,
+                last_name: lastName,
             })
         })
             .then(response => {
-                if(Object.values(response.data)[0] === "access granted") {
-                    console.log(Object.values(response.data)[0] === "access granted")
-                    authSuccessful()
-                }
+               console.log(response)
 
             })
     };
@@ -35,8 +41,17 @@ const Register = () => {
     }, [])
 
     //CheckLoginCredentials
-    const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+
+
+    useEffect(() => {
+        console.log(
+            password,
+            email,
+            confirmPassword,
+            firstName,
+            lastName
+            )
+    })
 
 
     //Return Login UI
@@ -45,16 +60,22 @@ const Register = () => {
             <div className={'form-container'}>
                 <h1>Register Page</h1>
                 <form>
+                    <label>First Name: </label>
+                    <input placeholder={"Alex"} onChange={(e) => setFirstName(e.target.value)}/>
+                    <label>Last Name: </label>
+                    <input placeholder={"Appleseed"} onChange={(e) => setLastName(e.target.value)}/>
                     <label>Email: </label>
                     <input placeholder={"example@email.com"} onChange={(e) => setEmail(e.target.value)}/>
                     <label>Password: </label>
                     <input placeholder={"password"} onChange={(e) => setPassword(e.target.value)}/>
-                    <input type={"button"} onClick={fetchUser} value={"Register"}/>
+                    <label>Confirm Password: </label>
+                    <input placeholder={"password"} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <input type={"button"} onClick={registerUser} value={"Register"}/>
                 </form>
             </div>
         );
     } else {
-        return <Navigate to={'/top-headlines'} />
+        return <Navigate replace to={'/top-headlines'} />
     }
 
 };
