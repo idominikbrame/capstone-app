@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "server": "node index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd ../client && npm install && npm run build"
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "engines": {
     "node": "v14.15.4"
