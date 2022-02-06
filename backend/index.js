@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 const port = process.env.PORT || 4000
 
 app.use(cors({
-    origin: "https://devdom-rendernews.netlify.app"
+    origin: '*',
 }))
 
 
