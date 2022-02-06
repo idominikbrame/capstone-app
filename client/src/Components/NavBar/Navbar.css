@@ -13,7 +13,8 @@
 .navbar-right{
     position: sticky;
     display: flex;
-    width: 20%;
+    width: 10%;
+    margin-right: 2rem;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -24,6 +25,7 @@
 }
 
 .navbar-right a {
+    margin-right: 10px;
     color: slategrey;
 }
 
@@ -69,10 +71,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    font-size: 2rem;
+    font-size: 50px;
     margin-left: 2rem;
     background: none;
-    width: 30%;
+    width: 200px;
 }
 
 .menu-bars:hover {
@@ -218,3 +220,11 @@ span {
     cursor: pointer;
     transition: 200ms;
 }
+
+@media (max-width: 900px) {
+    .nav-menu{
+        background-color: white;
+        z-index: 900;
+    }
+}
+

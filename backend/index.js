@@ -1,8 +1,18 @@
 const express = require('express')
-const cors = require('cors')
+const cors = require('cors');
 const bodyParser = require('body-parser')
 const app = express();
 const pool = require('./sql/connections')
+
+
+app.use(cors())
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 
 app.use(bodyParser.json())
 
@@ -10,11 +20,7 @@ app.use(bodyParser.json())
 
 const port = process.env.PORT || 4000
 
-app.use(cors({
-    origin:'*',
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200,
-}))
+
 
 
 app.get('/', (req, res) => {

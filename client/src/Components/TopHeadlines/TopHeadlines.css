@@ -1,5 +1,8 @@
 .article-container {
-    margin: 0 400px 20px 300px;
+    min-width: 450px;
+    max-width: 1000px;
+    margin-left: 250px;
+    margin-right: 50px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -21,6 +24,7 @@ a {
 
 li {
     list-style: none;
+    width: 90%;
 }
 
 .article-container:hover {
@@ -56,10 +60,12 @@ li {
 }
 
 .article-container img {
-    width: 60px;
-    height: 65px;
+    width: 35%;
+    height: auto;
+    overflow: no-display;
     object-fit: cover;
     border-radius: 5px;
+    border: 1px solid gainsboro;
 }
 
 .article-title {
@@ -72,4 +78,18 @@ li {
     list-style: none;
     color: darkorange;
     font-size: 12px;
+}
+
+@media (max-width: 900px) {
+    .article-container {
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+
+    .article-container img {
+        width: 80%;
+        margin-top: 25px;
+    }
 }
